@@ -1,6 +1,6 @@
-# basecode
+# basecodeflutter
 
-A new Flutter project.
+Base code for my flutter projects.
 
 ## Getting Started
 
