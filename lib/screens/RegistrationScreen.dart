@@ -5,11 +5,12 @@ import 'package:basecode/widgets/PrimaryButton.dart';
 import 'package:basecode/widgets/SecondaryButton.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:get/get.dart';
 
 import 'ForgotPasswordScreen.dart';
 
 class RegistrationScreen extends StatefulWidget {
-  static String routeName = "registration";
+  static String routeName = "/registration";
   @override
   RegistrationScreenState createState() => RegistrationScreenState();
 }
@@ -102,14 +103,12 @@ class RegistrationScreenState extends State<RegistrationScreen> {
                       SecondaryButton(
                           text: "Already have an account? Login",
                           onPress: () {
-                            Navigator.pushReplacementNamed(
-                                context, LoginScreen.routeName);
+                            Get.offNamed(LoginScreen.routeName);
                           }),
                       SecondaryButton(
                           text: "Forgot Password?",
                           onPress: () {
-                            Navigator.pushNamed(
-                                context, ForgotPasswordScreen.routeName);
+                            Get.toNamed(ForgotPasswordScreen.routeName);
                           }),
                     ],
                   ),

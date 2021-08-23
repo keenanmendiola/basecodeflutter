@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import './screens/LoginScreen.dart';
 import './routes.dart';
 
 void main() {
-  runApp(MaterialApp(
+  runApp(GetMaterialApp(
     theme: ThemeData(
       brightness: Brightness.dark,
       primaryColor: Colors.teal[700],
@@ -15,7 +16,7 @@ void main() {
         bodyText2: TextStyle(fontSize: 18.0),
       ),
     ),
-    routes: routes,
-    home: LoginScreen(),
+    getPages: routes,
+    initialRoute: LoginScreen.routeName,
   ));
 }

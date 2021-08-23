@@ -3,13 +3,13 @@ import 'package:basecode/screens/ForgotPasswordScreen.dart';
 import 'package:basecode/screens/LoginScreen.dart';
 import 'package:basecode/screens/RegistrationScreen.dart';
 import 'package:basecode/screens/SettingsScreen.dart';
-import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
-final Map<String, WidgetBuilder> routes = {
-  LoginScreen.routeName: (BuildContext context) => LoginScreen(),
-  RegistrationScreen.routeName: (BuildContext context) => RegistrationScreen(),
-  ForgotPasswordScreen.routeName: (BuildContext context) =>
-      ForgotPasswordScreen(),
-  DashboardScreen.routeName: (BuildContext context) => DashboardScreen(),
-  SettingsScreen.routeName: (BuildContext context) => SettingsScreen(),
-};
+final List<GetPage<dynamic>> routes = [
+  GetPage(name: LoginScreen.routeName, page: () => LoginScreen()),
+  GetPage(name: DashboardScreen.routeName, page: () => DashboardScreen()),
+  GetPage(name: RegistrationScreen.routeName, page: () => RegistrationScreen()),
+  GetPage(name: SettingsScreen.routeName, page: () => SettingsScreen()),
+  GetPage(
+      name: ForgotPasswordScreen.routeName, page: () => ForgotPasswordScreen())
+];

@@ -4,12 +4,13 @@ import 'package:basecode/screens/RegistrationScreen.dart';
 import 'package:basecode/widgets/SecondaryButton.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:get/get.dart';
 import '../widgets/PrimaryButton.dart';
 import '../widgets/CustomTextFormField.dart';
 import '../widgets/PasswordField.dart';
 
 class LoginScreen extends StatefulWidget {
-  static String routeName = "login";
+  static String routeName = "/login";
   @override
   LoginScreenState createState() => LoginScreenState();
 }
@@ -63,8 +64,7 @@ class LoginScreenState extends State<LoginScreen> {
                       iconData: FontAwesomeIcons.doorOpen,
                       onPress: () {
                         //authenticate here
-                        Navigator.pushReplacementNamed(
-                            context, DashboardScreen.routeName);
+                        Get.offNamed(DashboardScreen.routeName);
                       }),
                   SizedBox(
                     height: 20.0,
@@ -74,8 +74,7 @@ class LoginScreenState extends State<LoginScreen> {
                       iconData: FontAwesomeIcons.google,
                       onPress: () {
                         //authenticate here
-                        Navigator.pushReplacementNamed(
-                            context, DashboardScreen.routeName);
+                        Get.offNamed(DashboardScreen.routeName);
                       }),
                   SizedBox(
                     height: 20.0,
@@ -86,14 +85,12 @@ class LoginScreenState extends State<LoginScreen> {
                       SecondaryButton(
                           text: "New User? Register",
                           onPress: () {
-                            Navigator.pushReplacementNamed(
-                                context, RegistrationScreen.routeName);
+                            Get.offNamed(RegistrationScreen.routeName);
                           }),
                       SecondaryButton(
                           text: "Forgot Password?",
                           onPress: () {
-                            Navigator.pushNamed(
-                                context, ForgotPasswordScreen.routeName);
+                            Get.toNamed(ForgotPasswordScreen.routeName);
                           }),
                     ],
                   ),
